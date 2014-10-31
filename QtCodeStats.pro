@@ -18,18 +18,25 @@ RC_FILE += $$PWD/img/ico.rc
 SOURCES += \
     src/main.cpp\
     src/cmainwindow.cpp \
-    src/cstatthread.cpp
+    src/cstatthread.cpp \
+    src/caboutdialog.cpp
 
 HEADERS  += \
     src/cmainwindow.h \
-    src/cstatthread.h
+    src/cstatthread.h \
+    src/caboutdialog.h
 
 FORMS    += \
-    src/cmainwindow.ui
+    src/cmainwindow.ui \
+    src/caboutdialog.ui
 
 OTHER_FILES += \
     LICENSE.GPL \
     README
 
 RESOURCES += \
-    img/img.qrc
+    img/img.qrc \
+    translations/translations.qrc
+
+TRANSLATIONS += \
+    translations/qtcodestats_fr.ts

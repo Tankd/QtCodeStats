@@ -18,10 +18,26 @@ along with QtCodeStats. If not, see <http://www.gnu.org/licenses/>.
 #include "cmainwindow.h"
 #include <QApplication>
 #include <QDebug>
+#include <QFile>
+#include <QTranslator>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
+    //stylesheet
+    QFile file(QString(":/style_light.css"));
+    file.open(QIODevice::ReadOnly);
+    if(file.isOpen() == false) exit(1);
+    QString StyleSheet = file.readAll();
+    file.close();
+    qApp->setStyleSheet(StyleSheet);
+
+    //translations
+    QTranslator translator;
+    translator.load(":/qtcodestats_fr.qm");
+    a.installTranslator(&translator);
+
     CMainWindow w;
     w.show();
 

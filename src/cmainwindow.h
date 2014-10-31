@@ -62,6 +62,9 @@ private slots:
 
     void on_removeFolderButton_clicked();
 
+
+    void on_aboutButton_clicked();
+
 private:
     Ui::CMainWindow *ui;
 

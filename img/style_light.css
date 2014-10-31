@@ -1,0 +1,39 @@
+QWidget {
+background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+border-color: rgba(253, 103, 0, 192);
+}
+
+QGroupBox {
+background-color: rgb(255, 255, 255);
+border: 1px solid;
+border-color: rgb(200, 200, 200);
+margin-top: 3ex
+}
+
+QGroupBox::title {
+subcontrol-origin: margin;
+left: 5px;
+top: 1px;
+}
+
+QPushButton {
+border: 0px;
+background-color: rgb(200, 200, 200);
+}
+
+QPushButton::hover {
+background-color: rgb(220, 220, 220);
+}
+
+QPushButton:pressed {
+background-color: rgb(180, 180, 180);
+}
+
+QTableWidget, QListWidget {
+border: 1px solid;
+border-color: rgb(200, 200, 200);
+}
+
+
+

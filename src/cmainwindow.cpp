@@ -36,14 +36,15 @@ along with QtCodeStats. If not, see <http://www.gnu.org/licenses/>.
 #include <QFileInfo>
 
 #include "cstatthread.h"
-
+#include "caboutdialog.h"
 
 CMainWindow::CMainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::CMainWindow), _thread(0)
 {
     ui->setupUi(this);
-    ui->resultTable->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+    ui->resultTable->horizontalHeader()->setSectionResizeMode( QHeaderView::Stretch);
+    ui->resultTable->verticalHeader()->setVisible(false);
     readConfig();
 
     _lastPath = QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).first();
@@ -310,4 +311,11 @@ void CMainWindow::fileScanned(QString fileName, uint line, uint size, uint comme
 void CMainWindow::on_removeFolderButton_clicked()
 {
     delete ui->folderList->currentItem();
+}
+
+
+void CMainWindow::on_aboutButton_clicked()
+{
+        CAboutDialog dlg;
+        dlg.exec();
 }
